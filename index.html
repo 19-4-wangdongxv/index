@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+*{
+      padding: 0;
+      margin: 0; 
+    }
+    a{text-decoration: none;}
+    ul{list-style-type:none; }
+    .clear:after{content: "";
+                  height: 0;
+                  display: block;
+                  clear:both;}
+.kuangjia{height: 100px;background-color: black;width: 1350px;}
+.jvzhong{width: 1200px;margin: 0 auto;}
+.logo{float: left;margin-top: 20px;}
+.list li{float: left;margin-left: 40px;text-align: center;margin-top: 30px}
+.dazi{color: #fff;
+    font-size: 18px;}
+.xiaozi{color: #aeaeae;
+    font-size: 11px;}    
+.form1{float: right;
+            margin-top: -50px;}
+    .form1 * {vertical-align: bottom;}
+    .sousuo{float: right;
+            width: 320px;
+            height: 14px;
+            border: 1px solid rgba(0,164,255,1);
+            padding: 12px 19px;}
+    .anniu{float: right;
+            width:50px;
+            height:40px;
+            background:rgba(0,164,255,1) url(fa-search.png) no-repeat center center;
+            background-size: 19px;
+            border: 1px solid rgba(0,164,255,1);}
+.kuangjia2{background-color: black;}
+.jvzhong2{margin:0 auto;}
+.kuangjia2 img{width: 100%;
+    height: auto;position: relative;top: 100px;z-index: 100;}
+.kuangjia3{height: 284px;background-color: black;} 
+.kuangjia3 img{width:153px;
+height:217px;}
+.kuangjia3 li{float: left;text-align: center;margin-left: 75px}
+.k{height: 284px}
+.k h1 a{color: #937341;}
+.k p{color: #c4b998;}
+.biaozhu{background-color: black;height: 150px;border-top: 1px solid yellow;}
+.end{text-align: center}
+.p a{color: white} 
+a:hover{color: #937341;} 
+.end li{float: left;margin-left: 50px}      
+.g{color: #937341;}
+.zcc{background-color: white;
+width: 330px;
+display: inline-block;
+position: absolute;
+left: 500px;
+margin-top: 50px;
+}
+.up {
+      display: none; width: 100px; height: 100px; 
+      position: fixed; right: 10px; bottom: 20px;
+    }
+    .top{width: 100px;height: 100px;}
+    
+#div2{ top:0px; position:absolute;z-index: 101;}
+#time{text-align: center;background-color: black;}
+</style>
+</head>
+<body>
+  <script>
+    
+    function goTop(){
+      var odiv = document.getElementById("top");
+      document.documentElement.scrollTop = document.body.scrollTop = 0;
+    }
+  function addEvent(obj,type,fn){
+    if(obj.attachEvent){ //ie
+        obj.attachEvent('on'+type,function(){
+            fn.call(obj);
+        })
+    }else{
+        obj.addEventListener(type,fn,false);
+    }
+}
+addEvent(window,'scroll',function(){
+    var odiv = document.getElementById("top");
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      if(scrollTop > 200){ 
+        odiv.style.display = "block";
+      } else {
+        odiv.style.display = "none"
+      }
+});
+addEvent(window,'scroll',function(){
+    var div2 = document.getElementById("div2");
+    var _scroll = document.body.scrollTop || document.documentElement.scrollTop;
+    document.title = _scroll;
+    if(_scroll >= 0){
+      div2.style.position = "fixed";
+      div2.style.top = 0;
+    } else {
+      div2.style.position = "absolute";
+      div2.style.top = "400px";
+    }
+});
+
+
+
+  setInterval(function(){
+    var now = new Date();
+    var h = now.getHours();
+    var m = now.getMinutes();
+    var s = now.getSeconds();
+    
+    var _date = [
+      h<10?0:Math.floor(h/10), h%10,
+      m<10?0:Math.floor(m/10), m%10,
+      s<10?0:Math.floor(s/10), s%10
+      ]
+    console.log(_date);
+    
+    var imgs = document.getElementsByClassName("imgp");
+    for(var i=0; i<imgs.length; i++){
+      imgs[i].src = "img/"+_date[i]+".png";
+    }
+  }, 1000);
+  </script>
+  <div id="div1">
+	<div class="kuangjia" id="div2">
+<div class="jvzhong clear">
+<img src="logo-public.png" class="logo">
+<ul class="list clear">
+<li><a href=""><p class="dazi">游戏资料</p><p class="xiaozi">GAME INFO</p></a></li>
+<li><a href=""><p class="dazi">商城/合作</p><p class="xiaozi">STORE</p></a></li>
+<li><a href=""><p class="dazi">社区互动</p><p class="xiaozi">COMMUNITY</p></a></li>
+<li><a href=""><p class="dazi">赛事官网</p><p class="xiaozi">ESPORTS</p></a></li>
+<li><a href=""><p class="dazi">自助系统</p><p class="xiaozi">SYSTEM</p></a></li>
+</ul>
+<form class="form1 clear">
+            <input type="button" class="anniu">
+            <input type="text" placeholder="输入关键词" class="sousuo">
+          </form>
+</div>
+</div>
+</div>
+<div class="kuangjia2">
+<div class="jvzhong2">
+<img src="虚空之地-地区-《英雄联盟》宇宙.png">
+</div>
+</div>
+<div class="kuangjia3">
+<div class="jvzhong k">
+<ul>
+	<li><img src="虚空之地-地区-《英雄联盟》宇宙(1).png"><h1><a href="">虚空之地</a></h1><p>科加斯</p></li>
+<li><img src="虚空之地-地区-《英雄联盟》宇宙(2).png"><h1><a href="">虚空之地</a></h1><p>卡萨丁</p></li>
+<li><img src="虚空之地-地区-《英雄联盟》宇宙(3).png"><h1><a href="">虚空之地</a></h1><p>卡兹克</p></li>
+<li><img src="虚空之地-地区-《英雄联盟》宇宙(4).png"><h1><a href="">虚空之地</a></h1><p>卡莎</p></li>
+<li><img src="虚空之地-地区-《英雄联盟》宇宙(5).png"><h1><a href="">虚空之地</a></h1><p>克格莫</p></li>
+</ul>
+</div>
+</div>
+<div class="biaozhu">
+<div class="jvzhong end">
+<div class="zcc"><img src="tencentLogo.png"></div>
+<p class="p">
+	<ul><li><a href="">腾讯互动娱乐</a></li>
+<li><a href="">服务条款</a></li>
+<li><a href="">广告服务</a></li>
+<li><a href="">腾讯游戏招聘</a></li>
+<li><a href="">腾讯游戏客服</a></li>
+<li><a href="">游戏地图</a></li>
+<li><a href="">成长守护平台</a></li>
+<li><a href="">商务合作</a></li>
+<li><a href="">网站导航</a></li>
+</ul>
+</p><p class="g">COPYRIGHT © 1998 – 2020 TENCENT. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+<img src="f5a00969dcd21fe5483fa7a4270fa1af (1).jpg" id="top" class="up" onclick="goTop()">
+<div id="time">
+  <div id="div">
+    
+    <img src="img/0.png" class="imgp" />
+    <img src="img/8.png" class="imgp" />
+    时
+    <img src="img/1.png" class="imgp" />
+    <img src="img/5.png" class="imgp" />
+    分
+    <img src="img/0.png" class="imgp" />
+    <img src="img/9.png" class="imgp" />
+    秒
+    
+  </div>
+</div>
+</body>
+</html>
